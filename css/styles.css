@@ -29,3 +29,10 @@
 .img-max-width-100 img {
   max-width: 100%;
 }
+
+.bottom-left {
+  width: 20%;
+  position: absolute;
+  bottom: 5%;
+  left: 5%;
+}

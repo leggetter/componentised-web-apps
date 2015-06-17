@@ -77,12 +77,16 @@ background-image: url(./img/brjs-video-compilation.png)
 
 ---
 
+class: top
+
 ## What I'll Cover
 
 * Questions & Ideas
 * 5 Tools, Tips & Tricks
 
 ---
+
+class: top
 
 ## What I'll Cover
 
@@ -142,7 +146,7 @@ class: bg-video, em-text, trans-h, top, vid-width-100
 
 * left-hand menu
 * Central Console
-  * Rows
+	* Rows
 	* Expandable rows
 * Right-hand Event Creator
 
@@ -188,6 +192,8 @@ class: first-slide top
 # Should all components be Web Components?
 
 ---
+
+class: top
 
 [Christian Heilmann: Web Components and You - Dangers to Avoid](http://christianheilmann.com/2014/04/18/web-components-and-you-dangers-to-avoid/)
 
@@ -256,7 +262,7 @@ Google+
 
 ---
 
-class: bg-contain
+class: bg-contain bg-white
 background-image: url(./img/paper-elements.png)
 
 ---
@@ -309,6 +315,10 @@ background-image: url(./img/app-component-types-features.png)
 class: bg-contain
 background-image: url(./img/app-component-types-full.png)
 
+???
+
+Features can be composed of reusable elements
+
 ---
 
 ## iv. Bootstrap<sup>*</sup>
@@ -335,7 +345,6 @@ background-image: url(./img/app-component-types-full-with-bootstrap.png)
 
 ---
 
-class: bg-contain
 background-image: url(./img/ct-noir.png)
 
 ---
@@ -344,28 +353,42 @@ background-image: url(./img/ct-noir-workbench-hidden-tools.png)
 
 ---
 
-## Why?
+# Why?
 
+---
+
+class: trans-all bg-contain bg-white bottom
+background-image: url(./img/group-assets-by-feature.png)
+
+* Group assets by feature
+* Easier to find feature assets
 * Only load assets for a single feature
 * Faster reload times
+
+---
+
+class: bg-contain trans-all bg-white
+background-image: url(./img/broken-app.png)
+
 * Unaffected by changes in other features
-* Only run services required by feature
+
+---
+
+class: bg-contain trans-all bg-white bottom
+background-image: url(./img/pdc-feature-service-mapping.png)
+
+Only run services required by feature
+
+---
+
+## And...
+
 * Improved developer experience
 * Enforces loose coupling constraints (independent)
 
 ---
 
-## How?
-
-### i. Keep related assets grouped together
-
-![](./img/group-assets-by-feature.png)
-
----
-
-## How?
-
-### ii. Use Tooling
+## How? Use Tooling
 
 ---
 
@@ -386,7 +409,8 @@ background-image: url(./img/system-js.png)
 
 ---
 
-**TODO: explain what this means using Pusher Debug Console example**
+class: bg-contain bg-white
+background-image: url(./img/pdc-console-logger-only.png)
 
 ---
 
@@ -434,7 +458,10 @@ class: trans-h bottom
 
 ---
 
-# TODO: PDC example
+class: top bg-contain bg-white trans-all
+background-image: url(./img/pdc-console-logger-only-fake-service.png)
+
+Inject Fake Service into Services layer
 
 ---
 
@@ -442,9 +469,52 @@ class: trans-h bottom
 
 ---
 
-# TODO: code to add test double
+class: code-reveal top long
+
+```js
+var expect = require('expect.js');
+var registry = require('ServiceRegistry');
+```
+
+--
+
+```js
+var FakeAwesomeService = new require('FakeAwesomeService')();
+var FeatureToTest = require('feature');
+
+var feature,
+    service;
+```
+
+--
+
+```js
+describe('Feature#doStuff()', function(){
+```
+
+--
+
+```js
+  setup(function(){
+    service = new FakeAwesomeService();
+		registry.register('awesome', new FakeAwesomeService());
+    feature = new FeatureToTest();
+  });
+```
+		
+--
+		
+```js
+  it('should interact with the awesome service', function(){
+    feature.doStuff();
+    expect(service.hasBeenInteractedWith()).to.be(true);
+  });
+
+...
+```
 
 ---
+
 
 # 5. Do Abstract the UI layer
 
@@ -452,9 +522,8 @@ Essential + longer-term options
 
 ---
 
-## Use a UI library that abstracts the DOM
+## Essential: Use a UI library that abstracts the DOM
 
-* Essential
 * Don't trust the DOM
 * Consider using a View Model
 * Makes testing more reliable
@@ -467,16 +536,35 @@ Essential + longer-term options
 
 ---
 
-## Don't tie yourself to a UI library
+## Longer Term: Don't tie yourself to a UI library
 
-* Longer term
 * Enables change
+
+---
+
+class: bg-contain
+background-image: url(./img/mvvm-knockoutjs.png)
+
+---
+
+class: bg-contain
+background-image: url(./img/mvvm-angular.png)
+
+---
+
+class: bg-contain
+background-image: url(./img/mvvm-react.png)
+
+---
+
+class: bg-contain
+background-image: url(./img/mvvm-webcomponents.png)
 
 ---
 
 # Bonus
 
-## End to End Testability?
+## End to End Testability
 
 ???
 
@@ -484,7 +572,10 @@ Addy's initial version was FIRS and not FIRST
 
 ---
 
-**TODO: explain End to End Testability**
+class: bg-contain trans-all
+background-image: url(./img/vm-services-testing.png)
+
+<h2 class="bottom-left">Test Entire Features in Isolation</h2>
 
 ---
 
@@ -640,7 +731,7 @@ angular.module('demo', [])
 
 ```xml
 			template: '<img src="http://avatars.io/' +
-					  '{{service}}/{{username}}" />'
+						'{{service}}/{{username}}" />'
 		};
 	});
 </script>
@@ -946,7 +1037,7 @@ background-image: url(img/angular-2-component.png)
 * Opera - uses Blink
 * Mozilla
 * Microsoft - ?
-  * previously: HTA & ASP.NET Controls
+	* previously: HTA & ASP.NET Controls
 	* In high demand on IE UserVoice
 * Apple - ?
 
@@ -1060,12 +1151,12 @@ class: wide, long, top, code-reveal
 <script>
 	var CustomEventPrototype = Object.create(HTMLElement.prototype);
 	CustomEventPrototype.createdCallback = function() {
-	  // Build element ...
-	  
-	  this.addEventListener('click', function() {
-	    var customEvent = new CustomEvent('cheese');
-	    this.dispatchEvent(customEvent);
-	  }.bind(this));
+		// Build element ...
+		
+		this.addEventListener('click', function() {
+			var customEvent = new CustomEvent('cheese');
+			this.dispatchEvent(customEvent);
+		}.bind(this));
 	};
 
 	// ...
@@ -1076,7 +1167,7 @@ class: wide, long, top, code-reveal
 ```xml
 	var customEl = document.getElementById('my_custom_ev');
 	customEl.addEventListener('cheese', function() {
-	  alert('cheese fired!');
+		alert('cheese fired!');
 	});
 </script>
 
@@ -1094,7 +1185,7 @@ class: wide, long, top, code-reveal
 ```xml
 <script>
 	CustomEventPrototype.startSpin = function() {
-	  this.img.classList.toggle('spin');
+		this.img.classList.toggle('spin');
 	};
 	
 	CustomEventPrototype.stopSpin = function() {
@@ -1159,7 +1250,7 @@ class: middle, center
 ## Problems? Solved in the future?
 
 * HTML Imports
-  * Vulcanize | HTTP2
+	* Vulcanize | HTTP2
 * Shared scripts?
 	* Cache
 * Multiple versions?
