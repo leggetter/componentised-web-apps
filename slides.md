@@ -148,20 +148,6 @@ class: bg-video, em-text, trans-h, top, vid-width-100
 
 ---
 
-# Can all components be Web Components?
-
----
-
-[Christian Heilmann: Web Components and You - Dangers to Avoid](http://christianheilmann.com/2014/04/18/web-components-and-you-dangers-to-avoid/)
-
-> Just because we can make everything into an element now, doesn’t mean we should
-
---
-
-## Why not?
-
----
-
 # Component Best Practice?
 
 ---
@@ -199,11 +185,25 @@ class: first-slide top
 
 ---
 
+# Should all components be Web Components?
+
+---
+
+[Christian Heilmann: Web Components and You - Dangers to Avoid](http://christianheilmann.com/2014/04/18/web-components-and-you-dangers-to-avoid/)
+
+> Just because we can make everything into an element now, doesn’t mean we should
+
+--
+
+## Why not?
+
+---
+
 ## Questions
 
 * What are components in your App architecture?
-* Should all components be Web Components?
 * What are the best practices for building components?
+* Should all components be Web Components?
 
 ---
 
@@ -511,7 +511,18 @@ background-image: url(./img/angular-2-my-app.png)
 
 ---
 
-## Can all components be Web Components?
+## What are the best practices for building components?
+--
+
+* **F**ocused - reusable element, feature or service
+* **I**ndependent - dev in isolation. Loose coupling of UI & Services
+* **R**eusable - but only with care
+* **S**ervices - access to shared functionality & resources
+* **T**estable - because it's Isolated
+
+---
+
+## Should all components be Web Components?
 --
 
 * Provides a structure for building componentised web apps
@@ -522,14 +533,16 @@ background-image: url(./img/angular-2-my-app.png)
 
 ---
 
-## What are the best practices for building components?
---
+background-image: url(./img/gifs/columbo.gif)
 
-* **F**ocused - reusable element, feature or service
-* **I**ndependent - dev in isolation. Loose coupling of UI & Services
-* **R**eusable - but only with care
-* **S**ervices - access to shared functionality & resources
-* **T**estable - because it's Isolated
+---
+
+## You're Already Building Componentised Web Apps
+
+* Angular Directives
+* Ember Components
+* Knockout Components
+* React Components
 
 ---
 
