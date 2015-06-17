@@ -101,6 +101,8 @@ class: top
 
 ---
 
+background-image: url(./img/gifs/so-what-is-it.png)
+
 # But, What are Components?
 
 ---
@@ -152,6 +154,9 @@ class: bg-video, em-text, trans-h, top, vid-width-100
 
 ---
 
+class: trans-h top
+background-image: url(./img/gifs/shrug-carrey.gif)
+
 # Component Best Practice?
 
 ---
@@ -189,6 +194,9 @@ class: first-slide top
 
 ---
 
+class: trans-h bottom
+background-image: url(./img/gifs/shrug-gosling.gif)
+
 # Should all components be Web Components?
 
 ---
@@ -216,6 +224,9 @@ class: top
 # 5 Lessons Learned
 
 ---
+
+class: trans-h
+background-image: url(./img/gifs/spanish-inquisition.jpeg)
 
 # 1. Three<sup>*</sup> Application Component Types
 
@@ -341,6 +352,9 @@ background-image: url(./img/app-component-types-full-with-bootstrap.png)
 
 ---
 
+class: trans-h
+background-image: url(./img/gifs/isolation.jpg)
+
 # 2. Develop Features in Isolation
 
 ---
@@ -420,7 +434,12 @@ background-image: url(./img/pdc-console-logger-only.png)
 
 ---
 
-# 3. Avoid Premature Feature Abstraction
+class: top trans-all
+background-image: url(./img/gifs/sharing.gif)
+
+# 3. You Don't Always Have to Share
+
+a.k.a. Avoid Premature Feature Abstraction
 
 ---
 
@@ -451,16 +470,17 @@ class: top
 
 ---
 
-# 4. Do Abstract Services
+background-image: url(./img/gifs/do-not-peek.gif)
+class: trans-h bottom
 
-Treat services as contracts/interfaces.
+# 4. Treat Services as Contracts/Interfaces
 
 ---
 
 background-image: url(./img/ct-noir-workbench.png)
 class: trans-h bottom
 
-## Enables "Develop Features in Isolation"
+## Enables: "Develop Features in Isolation"
 
 ---
 
@@ -521,8 +541,10 @@ describe('Feature#doStuff()', function(){
 
 ---
 
+class: trans-all top
+background-image: url(./img/gifs/stuck.gif)
 
-# 5. Do Abstract the UI layer
+# 5. Abstract the UI layer
 
 Essential + longer-term options
 
@@ -585,7 +607,8 @@ background-image: url(./img/vm-services-testing.png)
 
 ---
 
-class: top
+class: top trans-all
+background-image: url(./img/gifs/wow.gif)
 
 ## Huge Improvement
 
