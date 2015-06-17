@@ -179,7 +179,7 @@ class: bg-contain, first-slide, trans-h, top
 
 ---
 
-class: first-slide
+class: first-slide top
 
 ## Component Best Practice
 
@@ -301,22 +301,6 @@ background-image: url(./img/pdc-reusable-features.png)
 
 ---
 
-class: top
-
-## Features &#10095; Reusable Elements?
-
---
-
-> Some developers find it more feasible to build an integrated solution first and then extract out useful modules. This can save time on public interfaces that might turn out to be wrong
-
-[addyosmani.com/first/](http://addyosmani.com/first/)
-
-???
-
-I don't think this is just "some developers". I think this is a pragmatic best practice.
-
----
-
 class: bg-contain
 background-image: url(./img/app-component-types-features.png)
 
@@ -351,13 +335,58 @@ background-image: url(./img/app-component-types-full-with-bootstrap.png)
 
 ---
 
-**TODO: explain what this means using Pusher Debug Console example**
-
-* assets, faster load etc.
+class: bg-contain
+background-image: url(./img/ct-noir.png)
 
 ---
 
-## Use Tooling
+background-image: url(./img/ct-noir-workbench-hidden-tools.png)
+
+---
+
+## Why?
+
+* Only load assets for a single feature
+* Faster reload times
+* Unaffected by changes in other features
+* Only run services required by feature
+* Improved developer experience
+* Enforces loose coupling constraints (independent)
+
+---
+
+## How?
+
+### i. Keep related assets grouped together
+
+![](./img/group-assets-by-feature.png)
+
+---
+
+## How?
+
+### ii. Use Tooling
+
+---
+
+class: bg-contain, trans-h, bottom
+background-image: url(./img/asset-graph.png)
+
+## Asset Graph
+
+---
+
+class: bg-contain bg-white
+background-image: url(./img/what-is-webpack.png)
+
+---
+
+class: bg-contain bg-white
+background-image: url(./img/system-js.png)
+
+---
+
+**TODO: explain what this means using Pusher Debug Console example**
 
 ---
 
@@ -365,11 +394,83 @@ background-image: url(./img/app-component-types-full-with-bootstrap.png)
 
 ---
 
+class: top
+
+## Features &#10095; Reusable Elements?
+
+--
+
+> Some developers find it more feasible to build an integrated solution first and then extract out useful modules. This can save time on public interfaces that might turn out to be wrong
+
+[addyosmani.com/first/](http://addyosmani.com/first/)
+
+???
+
+* I don't think this is just "some developers".
+* I think this is a pragmatic best practice.
+* If you share too soon changes become a maintenance nightmare
+
+---
+
+## Suggested Feature Abstraction Rules
+
+* Keep code within App codebase initially (don't share)
+* Only abstract after *at least* two clear use cases...
+* ... and component API is stable
+* Use specific/strict module versioning
+
+---
+
 # 4. Do Abstract Services
+
+Treat services as contracts/interfaces.
+
+---
+
+background-image: url(./img/ct-noir-workbench.png)
+class: trans-h bottom
+
+## Enables "Develop Features in Isolation"
+
+---
+
+# TODO: PDC example
+
+---
+
+## Makes Testing Easy
+
+---
+
+# TODO: code to add test double
 
 ---
 
 # 5. Do Abstract the UI layer
+
+Essential + longer-term options
+
+---
+
+## Use a UI library that abstracts the DOM
+
+* Essential
+* Don't trust the DOM
+* Consider using a View Model
+* Makes testing more reliable
+
+???
+
+* React has a virtual DOM
+* Knockout has a View Model
+* Angular has a Scope
+
+---
+
+## Don't tie yourself to a UI library
+
+* Longer term
+* Enables change
 
 ---
 
@@ -399,7 +500,7 @@ Addy's initial version was FIRS and not FIRST
 * Application Services
 --
 
-* The Application itself?
+* The Application itself (bootstrap)?
 
 ---
 
@@ -429,6 +530,20 @@ background-image: url(./img/angular-2-my-app.png)
 * **R**eusable - but only with care
 * **S**ervices - access to shared functionality & resources
 * **T**estable - because it's Isolated
+
+---
+
+class: title
+
+# Tools, Tips & Tricks for building Componentised Web Apps
+
+Thanks, Feedback & Questions!
+
+* <span class="speaker">Phil @leggetter</span>
+* <span class="speaker-job-title">Head of Evangelism</span>
+* <span class="speaker-pusher-logo"></span>
+
+???
 
 ---
 
