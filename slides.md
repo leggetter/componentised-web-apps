@@ -397,6 +397,8 @@ background-image: url(./img/asset-graph.png)
 
 ## Asset Graph
 
+??? Peter Müller
+
 ---
 
 class: bg-contain bg-white
@@ -406,6 +408,10 @@ background-image: url(./img/what-is-webpack.png)
 
 class: bg-contain bg-white
 background-image: url(./img/system-js.png)
+
+???
+
+Guy Bedford
 
 ---
 
@@ -479,7 +485,7 @@ var registry = require('ServiceRegistry');
 --
 
 ```js
-var FakeAwesomeService = new require('FakeAwesomeService')();
+var FakeAwesomeService = require('FakeAwesomeService');
 var FeatureToTest = require('feature');
 
 var feature,
@@ -497,7 +503,7 @@ describe('Feature#doStuff()', function(){
 ```js
   setup(function(){
     service = new FakeAwesomeService();
-		registry.register('awesome', new FakeAwesomeService());
+    registry.register('awesome', new FakeAwesomeService());
     feature = new FeatureToTest();
   });
 ```
@@ -579,9 +585,22 @@ background-image: url(./img/vm-services-testing.png)
 
 ---
 
+class: top
+
+## Huge Improvement
+
+* Selenium heavy tests + suite of VMs = 8hrs
+--
+
+* Test Features in Isolation + Single Machine = < 30 minutes
+
+---
+
 # Questions Answered
 
 ---
+
+class: top
 
 ## What are components in your App architecture?
 --
@@ -602,25 +621,45 @@ background-image: url(./img/angular-2-my-app.png)
 
 ---
 
+class: top
+
 ## What are the best practices for building components?
 --
 
 * **F**ocused - reusable element, feature or service
+--
+
 * **I**ndependent - dev in isolation. Loose coupling of UI & Services
+--
+
 * **R**eusable - but only with care
+--
+
 * **S**ervices - access to shared functionality & resources
+--
+
 * **T**estable - because it's Isolated
 
 ---
+
+class: top
 
 ## Should all components be Web Components?
 --
 
 * Provides a structure for building componentised web apps
+--
+
 * Reusable Elements & Features - yes
+--
+
 * Work within "best practice" constraints
+--
+
 * Services - ?
-* The App - ?
+--
+
+* The App - ?	
 
 ---
 
