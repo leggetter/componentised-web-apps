@@ -93,7 +93,7 @@ background-image: url(./img/brjs-video-compilation.png)
 * 5 Lessons Learned
 --
 
-* Answers from Lessons Learned
+* Questions &#10095; Lessons Learned &#10095; Answers
 
 ---
 
@@ -110,6 +110,15 @@ class: top
 * DOM Elements?
 --
 
+* Widgets
+
+---
+
+class: top
+
+## What are Components?
+
+* DOM Elements?
 * ~~Widgets~~
 --
 
@@ -177,28 +186,23 @@ class: first-slide
 * **F**ocused - How focused?
 --
 
-* **I**ndependent - kinda
+* **I**ndependent - without any external dependencies?
 --
 
-* **R**eusable - Maybe
+* **R**eusable - to what extent?
 --
 
 * **S**mall - It depends!
 --
 
-* **T**estable &#10004;
-
-
-???
-
-* Independent - live in isolation without external dependencies.
+* **T**estable - &#10004;
 
 ---
 
 ## Questions
 
 * What are components in your App architecture?
-* Can all components be Web Components?
+* Should all components be Web Components?
 * What are the best practices for building components?
 
 ---
@@ -207,35 +211,139 @@ class: first-slide
 
 ---
 
-# 1. Three Application Component Types
+# 1. Three<sup>*</sup> Application Component Types
+
+<sup>* maybe 4</sup>
 
 ---
 
-## Reusable Elements
+## i. Reusable Elements
+
+Functionality reusable cross-application feature or even cross-application.
 
 ---
+
+class: bg-contain
+background-image: url(./img/app-component-types-reusable-elements.png)
+
+---
+
+class: bg-contain
+background-image: url(./img/pdc-reusable-elements.png)
+
+???
+
+* Iconified menu items
+* Probably not much else
+
+---
+
+class: img-max-width-100 long
+
+Gmail
+![](./img/gmail-header.png)
+
+Google Drive
+![](./img/drive-header.png)
+
+Google+
+![](./img/plus-header.png)
+
+???
+
+* Google clearly have cross-app reusable elements
+* And they also want to standardise app elements in all Chrome/Android apps
+
+---
+
+class: bg-contain
+background-image: url(./img/paper-elements.png)
+
+---
+
+## ii. Application Services
+
+Access to shared resources, shared functionality and cross-feature communication.
+
+---
+
+class: bg-contain
+background-image: url(./img/app-component-types-services.png)
+
+---
+
+class: bg-contain
+background-image: url(./img/pdc-services.png)
+
+---
+
+## iii. Application Features
+
+Standalone pieces of functionality.
+
+???
+
+Consisting of:
+
+* feature specific logic
+* built using some reusable Elements
+* utilising services
+
+---
+
+class: bg-contain
+background-image: url(./img/app-component-types-features.png)
+
+---
+
+class: bg-contain
+background-image: url(./img/pdc-reusable-features.png)
+
+---
+
+class: top
+
+## Features &#10095; Reusable Elements?
+
+--
 
 > Some developers find it more feasible to build an integrated solution first and then extract out useful modules. This can save time on public interfaces that might turn out to be wrong
 
 [addyosmani.com/first/](http://addyosmani.com/first/)
 
----
+???
 
-> Some developers find it more feasible to build an integrated solution first and then extract out useful modules. **This can save time on public interfaces that might turn out to be wrong**
-
-[addyosmani.com/first/](http://addyosmani.com/first/)
+I don't think this is just "some developers". I think this is a pragmatic best practice.
 
 ---
 
-## Application Features
-
-**TODO: What are application features?**
+class: bg-contain
+background-image: url(./img/app-component-types-features.png)
 
 ---
 
-## Application Services
+class: bg-contain
+background-image: url(./img/app-component-types-full.png)
 
-**What are application services?**
+---
+
+## iv. Bootstrap<sup>*</sup>
+
+Application glue. Brings features and services into your app.
+
+???
+
+I don't mean the bootstrap framework
+
+---
+
+class: bg-contain
+background-image: url(./img/app-component-types-full.png)
+
+---
+
+class: bg-contain
+background-image: url(./img/app-component-types-full-with-bootstrap.png)
 
 ---
 
@@ -319,7 +427,7 @@ background-image: url(./img/angular-2-my-app.png)
 * **F**ocused - reusable element, feature or service
 * **I**ndependent - dev in isolation. Loose coupling of UI & Services
 * **R**eusable - but only with care
-* **S**ervices - essential
+* **S**ervices - access to shared functionality & resources
 * **T**estable - because it's Isolated
 
 ---
