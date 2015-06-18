@@ -332,7 +332,7 @@ Features can be composed of reusable elements
 
 ---
 
-## iv. Bootstrap<sup>*</sup>
+## iv. Bootstrapper<sup>*</sup>
 
 Application glue. Brings features and services into your app.
 
@@ -636,7 +636,7 @@ class: top
 * Application Services
 --
 
-* The Application itself (bootstrap)?
+* The Application itself (bootstrapper)?
 
 ---
 
@@ -711,6 +711,7 @@ Thanks, Feedback & Questions!
 * <span class="speaker">Phil @leggetter</span>
 * <span class="speaker-job-title">Head of Evangelism</span>
 * <span class="speaker-pusher-logo"></span>
+* pusher.com/jobs
 
 ???
 
