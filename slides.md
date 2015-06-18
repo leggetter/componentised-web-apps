@@ -610,12 +610,15 @@ background-image: url(./img/vm-services-testing.png)
 class: top trans-all
 background-image: url(./img/gifs/wow.gif)
 
-## Huge Improvement
+## Before: Selenium Tests
 
-* Selenium heavy tests + suite of VMs = 8hrs
+* On a suite of VMs = 8hrs
+
 --
 
-* Test Features in Isolation + Single Machine = < 30 minutes
+## After: Feature End to End Tests
+
+* On a Single Machine < 30 minutes
 
 ---
 
