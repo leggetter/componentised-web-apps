@@ -30,8 +30,10 @@ background-image: url(./img/pusher-circles.png)
 
 ---
 
+template: dblue
 background-image: url(./img/caplin-trader-examples.png)
-class: trans-h
+class: trans-h bg-cover
+background-size: cover;
 
 # Caplin Systems
 
